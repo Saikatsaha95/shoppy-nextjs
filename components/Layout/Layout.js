@@ -4,12 +4,13 @@ import Link from "next/link";
 import React from "react";
 import useStyles from "../../hooks/useStyles";
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, description, title }) => {
   const classes = useStyles();
   return (
     <div>
       <Head>
-        <title> {title ? `${title}-Shoppy` : Shoppy} </title>
+        <title> {title ? `${title}-Shoppy` : `Shoppy`} </title>
+        {description && <meta name="description" content={description}></meta>}
       </Head>
 
       <AppBar position="static" className={classes.navbar}>
